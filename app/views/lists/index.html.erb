@@ -20,6 +20,9 @@
   <tbody>
     <% @lists.each do |list| %>
       <tr>
+      <% if  (list.photo.key !=nil)%>
+        <td><%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %></td>
+      <% end %>
         <td><%= list.name %></td>
         <td><%= link_to "See details",list, class: "btn btn-primary"%></td>
         <td><%= link_to "Delete #{list.name}",
