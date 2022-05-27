@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center">
+  <div class="form-inputs">
+    <h1>Lists#new</h1>
+    <%= simple_form_for [@movie,@list] do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= f.input :name %>
+    <%#= f.input :title, collection: Movie::TITLE, prompt: :translate %>
+    <%= f.button :submit, class: "btn-primary" %>
+    <% end %>
+  </div>
+</div>

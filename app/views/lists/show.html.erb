@@ -1,0 +1,23 @@
+<h1 style="text-align:center;">Movies</h1>
+<p style="text-align:center;"><%= @list.name %></p>
+
+
+
+<div class="d-flex flex-row justify-content-center">
+  <% @list.movies.each do |movie| %>
+    <div class="card mx-2" style="width: 18rem;">
+      <img class="card-img-top" src=<%=movie.poster_url%> alt="Card image cap">
+      <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <h5 class="card-title"><%= movie.title %></h5>
+        <p class="card-text"><%= movie.rating %></p>
+      </div>
+        <p class="card-text"><%= movie.overview %></p>
+        <div  class="d-flex justify-content-between">
+          <%= link_to "Go Back",lists_path, class: "btn btn-primary"%>
+          <p class="card-text"><%=  @list.bookmarks.first.comment %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
